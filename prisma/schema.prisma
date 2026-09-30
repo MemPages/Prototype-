@@ -1,0 +1,8 @@
+// REFERENCE ONLY (UNVERIFIED): target PostgreSQL schema mirroring src/db/sqlite.ts.
+// Not used at runtime in this prototype (Prisma could not be installed in the build sandbox).
+datasource db { provider = "postgresql"; url = env("DATABASE_URL") }
+generator client { provider = "prisma-client-js" }
+model Specialty { id String @id  name String @unique  nameAr String  description String  keywords String[]  screenFirst Boolean @default(false) }
+model Hospital { id String @id  name String  nameAr String  city String  address String  specialties String[]  emergencyAvailable Boolean  doctors Doctor[] }
+model Doctor { id String @id  name String  nameAr String  specialty String  specialtyAr String  hospitalId String  hospital Hospital @relation(fields: [hospitalId], references: [id])  city String  languages String[]  yearsExperience Int  available Boolean  bio String
+  @@index([specialty, city]) }

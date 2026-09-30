@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HealTrip AI</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div><h1>HealTrip AI</h1><p id="subtitle"></p></div>
+    <div class="lang"><button id="btn-ar" type="button">العربية</button><button id="btn-en" type="button" class="on">English</button></div>
+  </header>
+  <div id="demo" class="demo"></div>
+  <main id="chat" aria-live="polite"></main>
+  <div id="replies" class="replies"></div>
+  <div id="status" class="status" role="status"></div>
+  <form id="form" autocomplete="off">
+    <input id="input" maxlength="1000" required>
+    <button id="send" type="submit"></button>
+  </form>
+  <footer id="disclaimer"></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
